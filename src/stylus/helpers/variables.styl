@@ -1,0 +1,117 @@
+@require '/node_modules/rupture/rupture'
+@require 'mixins'
+
+vendor-prefixes = webkit moz o ms official
+$i = !important
+$size = 16
+$transition = cubic-bezier(.65,.05,.36,1)
+$scrollbar = srcollbars(5, red)
+
+/* Media Query Rupture Variables */
+rupture.scale = 0 $screen-sm $screen-md $screen-lg $screen-xl
+rupture.scale-names = 'xs' 'sm' 'md' 'lg' 'xl'
+rupture.enable-em-breakpoints = true
+rupture.base-font-size = $size px
+
+// Boostrap V4 Breakpoints
+$screen-xs = 320
+$screen-sm = 576
+$screen-md = 768
+$screen-lg = 992
+$screen-xl = 1200
+
+// Sizes
+$xs = rem(6)
+$sm = rem(12)
+$md = rem(24)
+$lg = rem(48)
+$xl = rem(96)
+
+//Border Radius
+$radius-xs = 3.2
+$radius-sm = 6.4
+$radius-md = 9.6
+$radius-lg = 16
+$radius-xl = 19.2
+$radius-round = 1000
+
+
+// Collections
+$font-sizes = (12 16 21 28 37 50 67 80 119 159)
+$sides = ("-top" "-bottom" "-left" "-right" "")
+$sides-no-dashes = ("top" "bottom" "left" "right" )
+$font-weights = (normal 300 400 500 600 700 900)
+$font-main =  'replace-me'
+$font-sans = -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+// Hashes
+$palette = {
+  red: #b42f2f,
+  gray: #a2a2a2,
+  black: #333333,
+  green: #579917,
+  blue: #186AE8,
+  white: #ffffff,
+  light-gray: #f2f2f2,
+  grey: gray,
+  light-grey: gray,
+  transparent: transparent,
+ }
+
+ /* Overwrite original colors */
+red = $palette.red
+gray = $palette.gray
+blue = $palette.blue
+black = $palette.black
+green = $palette.green
+white = $palette.white
+light-gray = $palette.light-gray
+transparent = $palette.transparent
+
+//Aliases
+grey = gray
+light-grey = light-gray
+
+$social = {
+  facebook:#4b6eaa,
+  twitter: #55ACEE,
+  youtube: #ff0000,
+  linkedin: #007bb5,
+  whatsapp: #4DC247,
+  pinterest: #CB2027,
+  snapchat: #fffc00,
+  dropbox: #007ee5,
+  tumblr: #32506d
+  foursquare: #0072b1,
+  spotify: #00E461,
+  behance: #1769FF
+}
+
+$colors = merge($palette, $social)
+
+$breakpoints = {
+  "": xs,
+  tab-: sm,
+  des-: md,
+  lar-: lg,
+  xl-: xl
+}
+
+$spaces = {
+  "-xs": 6,
+   "-sm":12,
+   "": 24,
+   "-lg":48 ,
+   "-xl": 96,
+}
+
+$border-radius-sizes = {
+   "-xs": $radius-xs,
+   "-sm": $radius-sm,
+   "": $radius-md,
+   "-lg": $radius-lg,
+   "-xl": $radius-xl,
+   "-round": $radius-round,
+}
+
+
