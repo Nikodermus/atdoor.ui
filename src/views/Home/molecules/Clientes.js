@@ -1,11 +1,17 @@
 import React from 'react';
 import Cliente from '../atoms/Cliente';
 
+const returnClient = (props) => {
+  const clientes = [];
+  for (const key in props.data) {
+    if (key < 4) clientes.push(<Cliente data={props.data[key]} key={key} />);
+  }
+  return clientes;
+};
+
 const Clientes = props => (
   <div className="col-12 margin-top-sm">
-    {props.data.slice(0, 4).map((cliente, id) => (
-      <Cliente data={cliente} key={id} />
-    ))}
+    {returnClient(props)}
   </div>
 );
 

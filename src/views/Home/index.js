@@ -86,7 +86,7 @@ class Home extends Component {
       <React.Fragment>
         <HomeSlider />
         <PedirServicio onSubmit={this.crearServicio} />
-        <Loader visible={this.state.loader.visible}} />
+        <Loader visible={this.state.loader.visible} />
         <Message
           visible={this.state.message.visible}
           message={this.state.message.text}
