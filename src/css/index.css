@@ -7076,6 +7076,12 @@
   margin-bottom: 0.375rem;
   border-radius: 0.2rem;
 }
+.full-width {
+  width: 100%;
+}
+.auto-width {
+  width: auto;
+}
 html,
 body,
 div,
@@ -7373,6 +7379,45 @@ textarea:active {
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+.message {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  -webkit-box-shadow: 0 0 10px rgba(51,51,51,0.8);
+  box-shadow: 0 0 10px rgba(51,51,51,0.8);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 100;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  max-width: 80%;
+  min-width: 60%;
+}
+.message--out {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  bottom: 0;
+  -webkit-transform: translate(-50% -100%);
+  -moz-transform: translate(-50% -100%);
+  -o-transform: translate(-50% -100%);
+  -ms-transform: translate(-50% -100%);
+  transform: translate(-50% -100%);
+}
+.message__icon {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-animation: spin 1s steps(7, end) infinite normal forwards;
+  -moz-animation: spin 1s steps(7, end) infinite normal forwards;
+  -o-animation: spin 1s steps(7, end) infinite normal forwards;
+  -ms-animation: spin 1s steps(7, end) infinite normal forwards;
+  animation: spin 1s steps(7, end) infinite normal forwards;
 }
 html {
   background: #fff;

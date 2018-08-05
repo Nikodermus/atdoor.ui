@@ -6,19 +6,26 @@ import InputIcon from '../atoms/InputIcon';
 
 const PedirServicio = props => (
   <form className="pedir-servicio container-fluid" onSubmit={props.onSubmit}>
-    <div className="row margin-top">
+    <div className="row margin-top justify-content-center">
       <div className="col-12 form-group margin-bottom-xs">
-        <input type="text" placeholder="Nombre" name="nombre"/>
-        <textarea rows="4" placeholder="¿Qué necesitas?" />
+        <input type="text" placeholder="Nombre" name="nombre" />
+        <textarea rows="4" placeholder="¿Qué necesitas?" name="descripcion" />
       </div>
       <div className="col-12">
         <InputIcon className="border-blue border-radius-xs margin-bottom-xs">
-          <input type="text" className="padding-sm" placeholder="Contacto" name="contacto"/>
+          <input type="text" className="padding-sm" placeholder="Contacto" name="contacto" />
           <FontAwesome name="whatsapp" />
         </InputIcon>
       </div>
       <div className="col-12">
         <InputLocalizador />
+      </div>
+      <div className="col-8">
+        <input
+          type="submit"
+          value="Enviar"
+          className="bg-blue font-color-white margin-top-xs font-weight-500 text-center padding-sm border-radius full-width"
+        />
       </div>
     </div>
   </form>
