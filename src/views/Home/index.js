@@ -7,7 +7,7 @@ const crearServicio = () => {};
 
 class Home extends Component {
   state = {
-    visible: true,
+    visible: false,
   };
 
   render() {

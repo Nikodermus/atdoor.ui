@@ -8,9 +8,17 @@
 }
 
 .loader
-  box-shadow: 0 0 10px black
-  fixed: bottom $md left 50%
+  fixed bottom $md left 50%
+  box-shadow: 0 0 10px alpha(black, .8)
   transform: translateX(-50%)
   z-index: 100
+  opacity: 1
+  &--out
+    opacity: 0
+    bottom: 0
+    transform: translate(-50% -100%)
   &__icon
+    opacity: 1
     animation spin 1s steps(7, end) infinite normal forwards
+
+
