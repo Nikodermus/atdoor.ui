@@ -56,6 +56,7 @@ class Home extends Component {
     const parsed_bool = Boolean(bool);
     this.setState({
       message: {
+        text: message,
         visible: parsed_bool,
       },
     });
