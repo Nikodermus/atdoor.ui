@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
+import { withRouter } from 'react-router-dom';
 
-const Header = props => (
-  <div>
-Header
-  </div>
-);
+class Header extends Component {
+  componentDidMount() {
+    document.body.style.paddingTop = `${this.header.offsetHeight}px`;
+  }
 
-export default Header;
+  goToHome = () => {
+    this.props.history.push('/');
+  };
+
+  render() {
+    return (
+      <header className="row fixed-top padding font-size-21" ref={header => (this.header = header)}>
+        <div className="col-2">
+          <FontAwesome name="bars" className="" />
+        </div>
+        <div className="col">
+          <h1 onClick={this.goToHome}>
+AtDoor
+          </h1>
+        </div>
+      </header>
+    );
+  }
+}
+
+export default withRouter(Header);

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Wrappers
 import ErrorBoundary from './ErrorBoundary';
+import Solicitudes from '../views/Solicitudes';
 
 // Shared
 import Header from '../shared/Header';
@@ -19,6 +20,7 @@ const MainRouter = () => (
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/solicitudes" component={Solicitudes} />
           <Route path="/oops" component={GenericError} />
           <Route component={GenericError} />
         </Switch>

@@ -7713,6 +7713,11 @@ textarea:active {
 .replace-me {
   width: 100%;
 }
+header {
+  background: #b42f2f;
+  color: #fff;
+}
+@import '/node_modules/bootstrap/dist/css/bootstrap.css';
 html {
   background: #fff;
   min-height: 100vh;
