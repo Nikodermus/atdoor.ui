@@ -1,8 +1,9 @@
 import React from 'react';
+import PedirServicio from './molecules/PedirServicio';
 
 const Home = props => (
   <div>
-Home
+    <PedirServicio />
   </div>
 );
 

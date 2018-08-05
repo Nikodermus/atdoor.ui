@@ -13,7 +13,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="row fixed-top padding font-size-21" ref={header => (this.header = header)}>
+      <header className="row fixed-top padding font-size-21 bg-orange font-color-white" ref={header => (this.header = header)}>
         <div className="col-2">
           <FontAwesome name="bars" className="" />
         </div>

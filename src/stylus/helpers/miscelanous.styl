@@ -11,3 +11,17 @@
     absolute: top left
     width: 100%
     height: 100%
+
+.form-group
+  &:last-child
+    margin-bottom: 0
+  >
+    input
+    textarea
+    select
+      border: 1px solid gray
+      padding: $sm
+      width: 100%
+      margin-bottom: $xs
+      border-radius: rem($radius-xs)
+

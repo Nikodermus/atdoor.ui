@@ -15,7 +15,7 @@ import Home from '../views/Home';
 
 const MainRouter = () => (
   <Router>
-    <div>
+    <React.Fragment>
       <ErrorBoundary>
         <Header />
         <Switch>
@@ -26,7 +26,7 @@ const MainRouter = () => (
         </Switch>
         <Footer />
       </ErrorBoundary>
-    </div>
+    </React.Fragment>
   </Router>
 );
 

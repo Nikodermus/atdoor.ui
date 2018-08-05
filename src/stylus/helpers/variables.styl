@@ -41,7 +41,7 @@ $font-sizes = (12 16 21 28 37 50 67 80 119 159)
 $sides = ("-top" "-bottom" "-left" "-right" "")
 $sides-no-dashes = ("top" "bottom" "left" "right" )
 $font-weights = (normal 300 400 500 600 700 900)
-$font-main =  'replace-me'
+$font-main = 'Montserrat'
 $font-sans = -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 
 // Hashes
@@ -50,16 +50,14 @@ $palette = {
   gray: #a2a2a2,
   black: #333333,
   green: #579917,
-  blue: #186AE8,
+  blue: #13dcff,
   white: #ffffff,
   light-gray: #f2f2f2,
+  orange: #ff7e13,
   grey: gray,
   light-grey: gray,
   transparent: transparent,
  }
-
- $primary-color = $palette.red
-
 
  /* Overwrite original colors */
 red = $palette.red
@@ -68,8 +66,13 @@ blue = $palette.blue
 black = $palette.black
 green = $palette.green
 white = $palette.white
+orange = $palette.orange
 light-gray = $palette.light-gray
 transparent = $palette.transparent
+
+
+$primary-color= blue
+$secondary-color= orange
 
 //Aliases
 grey = gray
