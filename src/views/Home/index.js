@@ -22,19 +22,25 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    const itemsRef = firebase.database().ref('companies');
-    itemsRef.on('value', (snapshot) => {
-      const items = snapshot.val();
-      this.setState({
-        clients: items,
-      });
-    });
+    const items_ref = firebase.database().ref('companies');
+    items_ref.on('value', this.updateValues);
+    items_ref.on('child_changed', this.updateValues);
   }
+
+  updateValues = (snapshot) => {
+    const items = snapshot.val();
+    this.setState({
+      clients: items,
+    });
+  };
 
   crearServicio = (e) => {
     e.preventDefault();
 
+    const items_ref = firebase.database().ref('companies');
     const data = serialize(e.target, { hash: true });
+    console.log(data);
+    items_ref.push(data);
   };
 
   setearLoader = (bool) => {
@@ -85,7 +91,7 @@ class Home extends Component {
     return (
       <React.Fragment>
         <HomeSlider />
-        <PedirServicio onSubmit={this.crearServicio} />
+        <PedirServicio onSubmit={this.crearServicio} setearMensaje={this.setearMensaje} />
         <Loader visible={this.state.loader.visible} />
         <Message
           visible={this.state.message.visible}

@@ -4,7 +4,9 @@ import Cliente from '../atoms/Cliente';
 const returnClient = (props) => {
   const clientes = [];
   for (const key in props.data) {
-    if (key < 4) clientes.push(<Cliente data={props.data[key]} key={key} />);
+    if (Number(key) > 98 || Number.isNaN(Number(key))) {
+      clientes.push(<Cliente data={props.data[key]} key={key} />);
+    }
   }
   return clientes;
 };

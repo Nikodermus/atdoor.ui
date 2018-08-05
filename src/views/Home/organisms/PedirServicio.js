@@ -13,12 +13,17 @@ const PedirServicio = props => (
       </div>
       <div className="col-12">
         <InputIcon className="border-blue border-radius-xs margin-bottom-xs">
-          <input type="text" className="padding-sm" placeholder="Contacto" name="Telefono Contacto" />
+          <input
+            type="text"
+            className="padding-sm"
+            placeholder="Contacto"
+            name="Telefono Contacto"
+          />
           <FontAwesome name="whatsapp" />
         </InputIcon>
       </div>
       <div className="col-12">
-        <InputLocalizador />
+        <InputLocalizador setearMensaje={props.setearMensaje} />
       </div>
       <div className="col-8">
         <input

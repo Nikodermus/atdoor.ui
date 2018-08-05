@@ -4,9 +4,9 @@ import Clientes from '../molecules/Clientes';
 const NuestrosClientes = props => (
   <div className="container-fluid">
     <div className="margin-top-lg row justify-content-center ">
-      {props.data.length && (
+      {props.data && (
         <h1 className="font-color-blue font-weight-600 text-center font-size-21 padding-top-xs border-top-blue">
-          Ultimos en pedir servicio
+          Últimos en pedir servicio
         </h1>
       )}
 

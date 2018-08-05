@@ -15,6 +15,10 @@ class InputLocalizador extends Component {
   actualizarPosicion = (position) => {
     const { latitude, longitude } = position.coords;
     geocoder.reverseGeocode(latitude, longitude, (err, data) => {
+      if (err) {
+        this.props.setearMensaje(err);
+        return;
+      }
       this.setState({
         direccion: data.results[0].formatted_address,
       });
