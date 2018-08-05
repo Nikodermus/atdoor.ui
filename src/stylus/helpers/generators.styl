@@ -4,12 +4,12 @@
 for $color, $value in $palette
   {'.font-color-' + $color}
     color: $value !important
-    color: 'var(--%s) !important' % unquote($color)
+    // color: 'var(--%s) !important' % unquote($color)
     *
       color: inherit !important
   {'.bg-' + $color}
     background: $value
-    background: 'var(--%s)' % unquote($color)
+    // background: 'var(--%s)' % unquote($color)
     +disabled($value)
       cursor: not-allowed
 
@@ -17,12 +17,12 @@ for $color, $value in $palette
     border-width: 1px
     border-style: solid
     border-color: $value
-    border-color: 'var(--%s)' % unquote($color)
+    // border-color: 'var(--%s)' % unquote($color)
     disabled($value)
 
   {'.button-' + $color}
     background: $value
-    background: 'var(--%s)' % unquote($color)
+    // background: 'var(--%s)' % unquote($color)
     overflow: hidden
     width: 100%
     border-radius: rem($radius-sm)
@@ -95,7 +95,7 @@ for $name, $breakpoint in $breakpoints
           {'border' + $side + '-style'}: solid
           {'border' + $side + '-width'}: 1px
           {'border' + $side + '-color'}: $value
-          {'border' + $side + '-color'}: 'var(--%s)' % unquote($color)
+          // {'border' + $side + '-color'}: 'var(--%s)' % unquote($color)
 
       {'.border' + $side + '-collapse'}
         {'border' + $side}: 0

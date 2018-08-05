@@ -1,10 +1,24 @@
-import React from 'react';
-import PedirServicio from './molecules/PedirServicio';
+import React, { Component } from 'react';
+import PedirServicio from './organisms/PedirServicio';
+import HomeSlider from './organisms/HomeSlider';
+import Loader from '../../shared/Loader';
 
-const Home = props => (
-  <div>
-    <PedirServicio />
-  </div>
-);
+const crearServicio = () => {};
+
+class Home extends Component {
+  state = {
+    visible: true,
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <HomeSlider />
+        <PedirServicio onSubmit={crearServicio} />
+        <Loader visible={this.state.visible} />
+      </React.Fragment>
+    );
+  }
+}
 
 export default Home;

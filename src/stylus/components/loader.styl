@@ -1,0 +1,16 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader
+  box-shadow: 0 0 10px black
+  fixed: bottom $md left 50%
+  transform: translateX(-50%)
+  z-index: 100
+  &__icon
+    animation spin 1s steps(7, end) infinite normal forwards
