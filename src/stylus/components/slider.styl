@@ -1,0 +1,26 @@
+@require '../helpers/*'
+@require '../library/*'
+
+.slider
+  width:100%
+  max-width: 100vw
+  position: relative
+  &__wrapper
+    position: relative
+  &__inner
+    margin: 0
+    padding: 0
+    font-size: 0
+    text-align: left
+    relative
+  &__icon
+    absolute top 50%
+    transform: translateY(-50%)
+    color: white
+    font-size: rem(37)
+    text-shadow: $box-shadow
+    z-index: 100
+    &--left
+      left: $md
+    &--right
+      right: $md

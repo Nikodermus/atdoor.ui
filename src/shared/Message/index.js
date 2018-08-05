@@ -8,7 +8,10 @@ class Message extends Component {
 
   render() {
     return (
-      <div className={`${this.state.className} ${this.props.visible ? '' : 'message--out'}`}>
+      <div
+        className={`${this.state.className} ${this.props.visible ? '' : 'message--out'}`}
+        onClick={this.props.onClick}
+      >
         {this.props.message}
       </div>
     );

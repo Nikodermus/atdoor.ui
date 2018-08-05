@@ -5,6 +5,7 @@ import PedirServicio from './organisms/PedirServicio';
 import HomeSlider from './organisms/HomeSlider';
 import Loader from '../../shared/Loader';
 import Message from '../../shared/Message';
+import firebase from '../../data/firebase';
 
 class Home extends Component {
   state = {
@@ -16,7 +17,26 @@ class Home extends Component {
       text: '',
       timeout: null,
     },
+    clients: firebase.database().ref('companies'),
   };
+
+  componentDidMount() {
+    const itemsRef = firebase.database().ref('items');
+    itemsRef.on('value', (snapshot) => {
+      const items = snapshot.val();
+      const newState = [];
+      for (const item in items) {
+        newState.push({
+          id: item,
+          title: items[item].title,
+          user: items[item].user,
+        });
+      }
+      this.setState({
+        clients: newState,
+      });
+    });
+  }
 
   crearServicio = (e) => {
     e.preventDefault();
