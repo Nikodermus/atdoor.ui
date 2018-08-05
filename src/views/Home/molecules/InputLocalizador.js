@@ -34,7 +34,7 @@ class InputLocalizador extends Component {
           type="text"
           className="padding-sm"
           placeholder="¿Donde te encuentras?"
-          name="direccion"
+          name="Direccion"
           value={this.state.direccion}
           onChange={this.inputChange}
         />

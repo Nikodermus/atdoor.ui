@@ -6,6 +6,7 @@ import HomeSlider from './organisms/HomeSlider';
 import Loader from '../../shared/Loader';
 import Message from '../../shared/Message';
 import firebase from '../../data/firebase';
+import NuestrosClientes from './organisms/NuestrosClientes';
 
 class Home extends Component {
   state = {
@@ -17,23 +18,15 @@ class Home extends Component {
       text: '',
       timeout: null,
     },
-    clients: firebase.database().ref('companies'),
+    clients: [],
   };
 
   componentDidMount() {
-    const itemsRef = firebase.database().ref('items');
+    const itemsRef = firebase.database().ref('companies');
     itemsRef.on('value', (snapshot) => {
       const items = snapshot.val();
-      const newState = [];
-      for (const item in items) {
-        newState.push({
-          id: item,
-          title: items[item].title,
-          user: items[item].user,
-        });
-      }
       this.setState({
-        clients: newState,
+        clients: items,
       });
     });
   }
@@ -55,7 +48,6 @@ class Home extends Component {
 
   setearMensaje = (bool, message = '') => {
     const parsed_bool = Boolean(bool);
-    console.log(parsed_bool);
     this.setState({
       message: {
         visible: parsed_bool,
@@ -94,12 +86,13 @@ class Home extends Component {
       <React.Fragment>
         <HomeSlider />
         <PedirServicio onSubmit={this.crearServicio} />
-        <Loader visible={this.state.loader.visible} onClick={() => this.setearLoader(false)} />
+        <Loader visible={this.state.loader.visible}} />
         <Message
           visible={this.state.message.visible}
           message={this.state.message.text}
           onClick={() => this.setearMensaje(false)}
         />
+        <NuestrosClientes data={this.state.clients} />
       </React.Fragment>
     );
   }
