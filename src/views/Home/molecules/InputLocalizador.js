@@ -5,7 +5,7 @@ import InputIcon from '../atoms/InputIcon';
 
 class InputLocalizador extends Component {
   state = {
-    direccion: '',
+    Direccion: '',
   };
 
   dondeEstoy = () => {
@@ -20,7 +20,7 @@ class InputLocalizador extends Component {
         return;
       }
       this.setState({
-        direccion: data.results[0].formatted_address,
+        Direccion: data.results[0].formatted_address,
       });
     });
   };
@@ -39,7 +39,7 @@ class InputLocalizador extends Component {
           className="padding-sm"
           placeholder="¿Donde te encuentras?"
           name="Direccion"
-          value={this.state.direccion}
+          value={this.state.Direccion}
           onChange={this.inputChange}
         />
         <FontAwesome name="location-arrow" onClick={this.dondeEstoy} />

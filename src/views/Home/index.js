@@ -39,8 +39,8 @@ class Home extends Component {
 
     const items_ref = firebase.database().ref('companies');
     const data = serialize(e.target, { hash: true });
-    console.log(data);
     items_ref.push(data);
+    this.setearMensaje(true, 'Petición creada');
   };
 
   setearLoader = (bool) => {
